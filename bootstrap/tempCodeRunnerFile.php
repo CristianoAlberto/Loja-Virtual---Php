@@ -1,0 +1,2 @@
+<?php
+Illuminate\Foundation\Application
