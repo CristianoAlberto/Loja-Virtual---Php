@@ -2,10 +2,13 @@
     margin: 0px;
     padding: 0px;
 }
+ 
 
 body {
-    background: url("../img/img1.jpg") no-repeat;
+    background: url("../img/img1.jpg")no-repeat;
     overflow-x: hidden;
+    background-position: left top;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -17,6 +20,14 @@ h1 {
     height: 410px;
     width: 400px;
     box-shadow: 2px 2px 2px 2px rgba(46, 44, 44, 0.2);
+}
+
+.cardd {
+    background: #fff;
+    height: 490px;
+    width: 400px;
+    box-shadow: 2px 2px 2px 2px rgba(46, 44, 44, 0.2);
+    border-radius: 3px;
 }
 
 .btn {
@@ -135,3 +146,15 @@ p {
     text-align: center;
     padding: 10px;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .centralizar{
+      margin: 100px;
+  }
+
+   
+   

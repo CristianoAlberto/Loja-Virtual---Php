@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-sm-12 mt-3">
                 <div class="d-flex justify-content-center align-items-center">
-                    <div class="card">
+                    <div class="cardd mb-5">
                         <div class="card-body">
                             <form method="post" action="../controller/Classes/cadastrarUsuario.php" class="fonte">
                                 <div>
@@ -43,11 +43,11 @@
                                 </div>
 
                                 <div>
-                                    <button class="btn btn-success" type="submit">
+                                    <button class="btn btn-success mt-4" type="submit">
                                         Cadastrar
                                     </button>
 
-                                    <button class="btn btn-dark" type="">
+                                    <button class="btn btn-dark mt-4" type="">
                                         <a href="/"> Voltar </a>
                                     </button>
                                 </div>

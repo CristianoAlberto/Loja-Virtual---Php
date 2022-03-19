@@ -21,43 +21,74 @@
                         <a class="aedit" href="/">Sair</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
+
+
+
     <div class="container">
         <div class="row">
+
+
             <div class="col-sm-6 mt-5">
                 <div>
                     <form action="/pesquisarP" method="post">
-                        <input id="pesquisarProduto" name="pesquisarProduto" type="search" class="mt-5 form-control" placeholder="Pesquisar...">
-                        <button type="submit" class="btn btn-primary mt-3">
+                        <input 
+                        id="pesquisarProduto"
+                        name="pesquisarProduto"
+                        type="search"
+                        class="mt-5 form-control"
+                        placeholder="Pesquisar...">
+                        <button 
+                        type="submit" 
+                        class="btn btn-primary mt-3">
                             Buscar
                         </button>
                         </form>
-                </div>
-                <div>
 
+                </div>
+         </div>
+               
+
+            </div>
+
+
+
+
+         <div class="row">
+             <div class="col-md-12 col-12 mt-5 centralizar">
+
+ 
                     @foreach ($produtos as $produto)
-                        <div id="area-principal">
+                        <div id="area-principal flex-container">
                             <div id="postagem">
 
                                 <img src="/img/lojavirtual/{{ $produto->imagem }}" width="260 px" height="150px">
-                                <h1>{{ $produto->nome }}</h1>
-                                <h3>{{ $produto->preco }}</h3>
+                                <h3>{{ $produto->nome }}</h3>
+                                <h4>{{ $produto->preco }}</h4>
 
-                                <a href="/events/show/{{ $produto->id }}" class="btn btn-dark">Saber mais</a>
-                                <a href="/events/update/{{ $produto->id }}" class="btn btn-info">Editar</Em></a>
-                                <a href="/events/destroy/{{ $produto->id }}" class="btn btn-warning">Elminar</a>
+                                <button  
+                                type="button"
+                                class="btn btn-success">
+                                <a
+                                href="/events/show/{{ $produto->id }}">
+                                Saber mais 
+                                </a>
+                                </button >
+                              
 
-                            </div>
+                     
+                        </div>
                         </div>
                     @endforeach
 
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <!-- Mais info -->
-            </div>
-        </div>
+                </div>
+            
+           
+       
     </div>
 @endsection
