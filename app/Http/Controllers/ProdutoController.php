@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Http\Resources\ProdutoResource as ProdutoR;
 
 
 class ProdutoController extends Controller
@@ -13,8 +14,17 @@ class ProdutoController extends Controller
     }
 
     public function index(){
-        $produtos=Produto::all();
-        return view ('events.index',['produtos'=>$produtos]);
+
+        $search=request('pesquisarProduto');
+
+        if($search){
+            $produtos=Produto::where([
+                ['nome', 'like', '%'.$search.'%']
+            ])->get();
+        }else{
+            $produtos=Produto::all();
+        }
+        return view ('events.index',['produtos'=>$produtos, 'search'=>$search]);
     }
 
     public function create(){
@@ -28,6 +38,8 @@ class ProdutoController extends Controller
         $produto->descricao=$request->descricaoProduto;
         $produto->preco=$request->precoProduto;
         $produto->data=$request->dataProduto;
+        $produto->items=$request->items;
+        $produto->quantidade=$request->quantidadeProduto;
 
         //imagem upload
         if($request->hasFile('imagemProduto')&&$request->file('imagemProduto')->isValid()){
@@ -37,14 +49,14 @@ class ProdutoController extends Controller
             //esse vai para o banco
             $imagemName=md5($requestImagem->getClientOriginalName(). Strtotime('now')). "." .$extension;
 
-            $requestImagem->move(public_path("img/lojavirtual"), $imagemName);
+            $requestImagem->move(public_path("img\lojavirtual"), $imagemName);
 
             $produto->imagem=$imagemName;
         }
 
         $produto->save();
 
-        return redirect('events.index')->with('msg','Produto criado com sucesso');
+        return redirect("events.index")->with('msg','Produto criado com sucesso');
     }
 
     public function show($id){
@@ -53,12 +65,20 @@ class ProdutoController extends Controller
         return view ("events.show",['produtos'=>$produtos]);
     }
 
-    public function update(Request $request,$id){
+    public function up($id){
         $produto=Produto::findOrFail($id);
+        return view("events.update",['produtos'=>$produto]);
+    }
+
+    public function update(Request $request){
+
+        $produto=Produto::findOrFail($request->id);
         $produto->nome=$request->nomeProduto;
         $produto->descricao=$request->descricaoProduto;
         $produto->preco=$request->precoProduto;
         $produto->data=$request->dataProduto;
+
+        $produto->quantidade=$request->quantidadeProduto;
 
         //imagem upload
         if($request->hasFile('imagemProduto')&&$request->file('imagemProduto')->isValid()){
@@ -68,14 +88,28 @@ class ProdutoController extends Controller
             //esse vai para o banco
             $imagemName=md5($requestImagem->getClientOriginalName(). Strtotime('now')). "." .$extension;
 
-            $requestImagem->move(public_path("img/lojavirtual"), $imagemName);
+            $requestImagem->move(public_path("/img/lojavirtual"), $imagemName);
 
             $produto->imagem=$imagemName;
         }
 
         $produto->save();
 
-        return redirect('events.index')->with('msg','Produto actualizado com sucesso');
+        return redirect('events/index')->with('msg','Produto actualizado com sucesso');
 
+    }
+
+    public function des($id){
+        $produto=Produto::findOrFail($id);
+        return view("events.destroy",['produtos'=>$produto]);
+    }
+
+    public function destroy($id){
+
+
+        $produto=Produto::findOrFail($id);
+        $produto->delete();
+        new ProdutoR($produto);
+        return redirect('events/index')->with('msg', 'Produto eliminado com sucesso');
     }
 }

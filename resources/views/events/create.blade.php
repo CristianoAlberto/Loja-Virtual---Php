@@ -18,7 +18,8 @@
                         placeholder="Digite o nome do seu produto" required>
 
                     <label class="text-white">Descrição do produto</label>
-                    <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" placeholder="Digite a descriçao do seu produto"></textarea>
+                    <textarea class="form-control" name="descricaoProduto" id="descricaoProduto"
+                        placeholder="Digite a descriçao do seu produto"></textarea>
 
                     <input type="file" class="form-control
                 mt-3" name="imagemProduto" id="imagemProduto">
@@ -26,10 +27,22 @@
             </div>
 
             <div class="col-sm-3">
+
                 <label class="fonte mt-3 text-white">Digite o preço do produto</label>
-                <input type="text" placeholder=" 10.00Akz" required class="form-control mb-3" id="precoProduto" name="precoProduto" required>
+                <input type="text" placeholder=" 10.00Akz" required class="form-control mb-3" id="precoProduto"
+                    name="precoProduto" required>
 
                 <input type="date" name="dataProduto" id="dataProduto" class="form-control">
+                <label class="fonte mt-3 text-white">Digite a quantidade do seu produto</label>
+
+                <input type="text" name="quantidadeProduto" id="quantidadeProduto" placeholder="Ex:10"
+                    class="form-control mt-1" required><br>
+                
+                <input type="checkbox" name="items[]" value="cerveja">Cerveja<br>
+                <input type="checkbox" name="items[]" value="roupa">Roupa<br>
+                <input type="checkbox" name="items[]" value="alimento">Alimento<br>
+                <input type="checkbox" name="items[]" value="geral">Geral<br>
+                <input type="checkbox" name="items[]" value="animal">Animal<br>
             </div>
 
 

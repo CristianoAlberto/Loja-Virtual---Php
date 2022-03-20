@@ -1,0 +1,10 @@
+.meuPost {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 10px;
+    float: left;
+}
+
+.organiza {
+    padding: 10px 100px 10px 100px;
+}

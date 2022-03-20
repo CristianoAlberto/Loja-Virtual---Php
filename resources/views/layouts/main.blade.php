@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" stype="text/css" href="/css/estilo.css">
+    <link rel="stylesheet" stype="text/css" href="/css/estilo2.css">
 </head>
 <body >
 
