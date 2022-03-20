@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0px;
 }
- 
 
 body {
     background: url("../img/img1.jpg")no-repeat;
@@ -150,7 +149,6 @@ p {
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-<<<<<<< HEAD
 }
 
 .centralizar {
@@ -164,13 +162,3 @@ p {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-=======
-  }
-  
-  .centralizar{
-      margin: 100px;
-  }
-
-   
-   
->>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
