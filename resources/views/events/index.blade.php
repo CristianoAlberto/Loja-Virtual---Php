@@ -35,6 +35,7 @@
 
             <div class="col-sm-6 mt-5">
                 <div>
+<<<<<<< HEAD
                     <form action="/events/index" method="get">
                         <input id="pesquisarProduto" name="pesquisarProduto" type="search" class="mt-5 form-control"
                             placeholder="Pesquisar...">
@@ -76,6 +77,55 @@
 
 
 
+=======
+                    <form action="/pesquisarP" method="post">
+                        <input 
+                        id="pesquisarProduto"
+                        name="pesquisarProduto"
+                        type="search"
+                        class="mt-5 form-control"
+                        placeholder="Pesquisar...">
+                        <button 
+                        type="submit" 
+                        class="btn btn-primary mt-3">
+                            Buscar
+                        </button>
+                        </form>
+
+                </div>
+         </div>
+               
+
+            </div>
+
+
+
+
+         <div class="row">
+             <div class="col-md-12 col-12 mt-5 centralizar">
+
+ 
+                    @foreach ($produtos as $produto)
+                        <div id="area-principal flex-container">
+                            <div id="postagem">
+
+                                <img src="/img/lojavirtual/{{ $produto->imagem }}" width="260 px" height="150px">
+                                <h3>{{ $produto->nome }}</h3>
+                                <h4>{{ $produto->preco }}</h4>
+
+                                <button  
+                                type="button"
+                                class="btn btn-success">
+                                <a
+                                href="/events/show/{{ $produto->id }}">
+                                Saber mais 
+                                </a>
+                                </button >
+                              
+
+                     
+                        </div>
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
                         </div>
                     </div>
                 @endforeach
@@ -88,10 +138,18 @@
 
 
 
+<<<<<<< HEAD
             </div>
         </div>
 
 
 
+=======
+                </div>
+                </div>
+            
+           
+       
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
     </div>
 @endsection

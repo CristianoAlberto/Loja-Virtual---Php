@@ -28,7 +28,11 @@
         <div class="row">
             <div class="col-sm-6 mt-5">
                 <div>
+<<<<<<< HEAD
                     <form
+=======
+                    <form 
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
                     action="pesquisarP"
                     method="post">
                         <input
@@ -50,7 +54,11 @@
                    <div class="col-sm-6 col-md-12 mt-5 mb-5">
                     <div>
                         <div class="meuPost">
+<<<<<<< HEAD
                             <img id="img" src="/img/lojavirtual/{{ $produtos->imagem }}" width="560 px" height="550px">
+=======
+                            <img src="/img/lojavirtual/{{ $produtos->imagem }}" width="560 px" height="550px">
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
                         </div>
                     </div>
            <div class="row ">
@@ -60,7 +68,11 @@
                         <h1>{{ $produtos->nome }}</h1>
                         <h2>{{ $produtos->preco }}</h2>
                         <h3>{{ $produtos->descricao }}</h3>
+<<<<<<< HEAD
                         <h5>Data de postagem: {{date('d/m/Y', strtotime($produtos->data)) }}</h5>
+=======
+                        <h4>{{ $produtos->data }}</h4>
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
 
                         <!--Botões -->
                        <div class="mt-5 mb-3">
@@ -71,7 +83,11 @@
                         <button class="btn btn-success">   <!--Coloca o link aqui --> XXXX </button>
                         <button class="btn btn-dark">      <!--Coloca o link aqui --> Voltar </button>
                        </div>
+<<<<<<< HEAD
                     </div>
+=======
+                    </div> 
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
                 </div>
             </div>
            </div>

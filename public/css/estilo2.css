@@ -1,10 +1,22 @@
+<<<<<<< HEAD
 .meuPost {
+=======
+.meuPost{
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin-top: 10px;
     float: left;
 }
 
+<<<<<<< HEAD
 .organiza {
     padding: 10px 100px 10px 100px;
 }
+=======
+.organiza{
+ padding: 10px 100px 10px 100px;
+}
+
+  
+>>>>>>> 1729a61d3311e5182a12aef3671347947e4e3c77
